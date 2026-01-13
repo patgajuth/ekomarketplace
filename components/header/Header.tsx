@@ -17,8 +17,11 @@ const Header = () => {
   const isLoading = status === "loading";
   const isLoggedIn = !!session?.user;
 
+  const linkBase = "transition-colors duration-200 hover:text-primary-700";
+  const linkActive = "text-primary-700 font-semibold";
+
   return (
-    <header className="flex flex-col gap-y-10 px-10 py-8 max-w-[1440px] mx-auto w-full">
+    <header className="flex flex-col gap-y-8 px-4 sm:px-8 lg:px-10 py-6 max-w-[1440px] mx-auto w-full eco-surface rounded-3xl mt-6">
       <div className="flex justify-between items-center">
         <Link href="/">
           <Logo size="primary" />
@@ -29,9 +32,10 @@ const Header = () => {
             <button
               onClick={() => router.push("/cart")}
               className={clsx(
-                "flex justify-center items-center w-8 h-8 cursor-pointer rounded-full",
+                "flex justify-center items-center w-9 h-9 cursor-pointer rounded-full",
                 "bg-[var(--color-tile)] text-[var(--textColor-secondary)] border border-[var(--color-border-primary)]",
-                "transition-colors duration-200 hover:bg-[var(--color-primary-50)] active:bg-[var(--color-primary-100)]"
+                "transition-all duration-200 hover:bg-[var(--color-primary-50)] hover:border-primary-200 hover:shadow-md",
+                "active:bg-[var(--color-primary-100)]"
               )}
             >
               <CartIcon />
@@ -48,16 +52,14 @@ const Header = () => {
       </div>
 
       {isLoggedIn && (
-        <>
-          <nav className="flex gap-x-12 textM">
-            <Link href="/" className={pathname === "/" ? "text-primary-500 font-medium" : ""}>
-              Home
-            </Link>
-            <Link href="/products" className={pathname === "/products" ? "text-primary-500 font-medium" : ""}>
-              Products
-            </Link>
-          </nav>
-        </>
+        <nav className="flex gap-x-8 textM font-medium bg-[var(--color-eco-mist)]/70 border border-[var(--color-border-primary)] rounded-full px-6 py-2 w-max">
+          <Link href="/" className={clsx(linkBase, pathname === "/" && linkActive)}>
+            Home
+          </Link>
+          <Link href="/products" className={clsx(linkBase, pathname === "/products" && linkActive)}>
+            Products
+          </Link>
+        </nav>
       )}
       <hr className="text-[var(--color-border-secondary)]" />
     </header>

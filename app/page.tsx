@@ -5,7 +5,7 @@ import CarouselWrapper from "@/components/home/carousel/CarouselWrapper";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-y-[100px] w-full px-10">
+    <div className="flex flex-col gap-y-20 w-full">
       <CarouselWrapper />
       <CategorySection />
       <RecommendationSection />

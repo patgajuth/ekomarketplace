@@ -73,8 +73,8 @@ export default function Carousel({ categories }: CarouselProps) {
   }, [stage]);
 
   return (
-    <div className="flex flex-col gap-y-6 items-center">
-      <div className="relative w-full h-[452px] overflow-hidden bg-[var(--color-tile)] border border-[var(--color-border-primary)] rounded-md">
+    <div className="flex flex-col gap-y-6 items-center animate-fade-up">
+      <div className="relative w-full h-[420px] sm:h-[460px] lg:h-[480px] overflow-hidden eco-hero rounded-3xl">
         {stage === "idle" && (
           <div className="absolute inset-0">
             <CarouselSlide

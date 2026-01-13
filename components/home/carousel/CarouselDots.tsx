@@ -14,8 +14,10 @@ export default function CarouselDots({ count, activeIndex, onSelect }: CarouselD
           key={index}
           onClick={() => onSelect(index)}
           className={clsx(
-            "rounded-full cursor-pointer",
-            index === activeIndex ? "w-4 h-4 bg-[var(--color-secondary)]" : "w-3 h-3 bg-[var(--color-border-primary)]"
+            "rounded-full cursor-pointer transition-all duration-200",
+            index === activeIndex
+              ? "w-4 h-4 bg-primary-600 shadow-sm"
+              : "w-3 h-3 bg-primary-200 hover:bg-primary-300"
           )}
         />
       ))}

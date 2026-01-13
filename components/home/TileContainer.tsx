@@ -41,7 +41,7 @@ const TileContainer: React.FC<TileContainerProps> = ({ children, title }) => {
     setExpanded((prev) => !prev);
   }, []);
 
-  const headerClasses = clsx("mb-8", hasOverflow && "flex justify-between items-center");
+  const headerClasses = clsx("mb-8 flex flex-wrap items-end gap-6", hasOverflow && "justify-between");
 
   const wrapperClasses = clsx(
     "flex gap-x-[32px]",
@@ -53,15 +53,18 @@ const TileContainer: React.FC<TileContainerProps> = ({ children, title }) => {
   );
 
   return (
-    <section className="max-w-[1440px]">
+    <section className="max-w-[1440px] w-full animate-fade-up">
       <header className={headerClasses}>
-        <h2 className="heading4 font-medium">{title}</h2>
+        <div className="flex flex-col gap-2">
+          <span className="textXS uppercase tracking-[0.24em] text-[var(--textColor-tertiary)]">Curated</span>
+          <h2 className="heading4 font-medium text-[var(--textColor-primary)]">{title}</h2>
+        </div>
         {hasOverflow && (
           <button
             onClick={handleToggle}
             aria-expanded={expanded}
             aria-controls={contentId}
-            className="flex items-center gap-x-3 textM font-medium text-[var(--color-primary)] cursor-pointer"
+            className="flex items-center gap-x-3 textM font-medium text-primary-700 cursor-pointer transition-colors duration-200 hover:text-primary-600"
           >
             {expanded ? "See Less" : "See All"}
             <RightArrowIcon className={clsx("transition-transform duration-300", expanded && "rotate-180")} />

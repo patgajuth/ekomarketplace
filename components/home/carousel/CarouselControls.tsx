@@ -10,15 +10,15 @@ export default function CarouselControls({ onPrev, onNext }: CarouselControlsPro
     <>
       <button
         onClick={onPrev}
-        className="flex justify-center items-center absolute left-0 top-1/2 -translate-y-1/2 w-11 h-[74px] bg-[var(--color-primary)] rounded-r-md cursor-pointer hover:bg-[var(--color-secondary)]"
+        className="flex justify-center items-center absolute left-5 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-tile)]/90 border border-[var(--color-border-primary)] rounded-full cursor-pointer shadow-md backdrop-blur transition-all duration-200 hover:bg-[var(--color-primary-50)] hover:border-primary-200"
       >
-        <SvgDropDown className="rotate-90 text-[var(--color-tile)]" />
+        <SvgDropDown className="rotate-90 text-[var(--color-primary-700)]" />
       </button>
       <button
         onClick={onNext}
-        className="flex justify-center items-center absolute right-0 top-1/2 -translate-y-1/2 w-11 h-[74px] bg-[var(--color-primary)] rounded-l-md cursor-pointer hover:bg-[var(--color-secondary)]"
+        className="flex justify-center items-center absolute right-5 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-tile)]/90 border border-[var(--color-border-primary)] rounded-full cursor-pointer shadow-md backdrop-blur transition-all duration-200 hover:bg-[var(--color-primary-50)] hover:border-primary-200"
       >
-        <SvgDropDown className="-rotate-90 text-[var(--color-tile)]" />
+        <SvgDropDown className="-rotate-90 text-[var(--color-primary-700)]" />
       </button>
     </>
   );
