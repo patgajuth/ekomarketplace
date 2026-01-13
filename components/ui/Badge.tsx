@@ -14,10 +14,10 @@ function Badge({ type = "default", size = "l", className, text }: BadgeProps) {
     s: "py-0 textXXS font-medium",
   };
   const typeBadge = {
-    default: "bg-primary-500",
-    success: "bg-success-500",
-    failed: "bg-danger-500",
-    pending: "bg-warning-500",
+    default: "bg-primary-500 text-base-white shadow-sm",
+    success: "bg-success-500 text-base-white shadow-sm",
+    failed: "bg-danger-500 text-base-white shadow-sm",
+    pending: "bg-warning-300 text-warning-900 shadow-sm",
   };
   return (
     <div className={clsx(typeBadge[type], "px-3.5 font-medium rounded-md w-max", sizeBadge[size], className)}>

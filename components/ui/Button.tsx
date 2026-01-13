@@ -28,9 +28,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const styling = {
-      stroke: "text-primary-500 border border-primary-500 rounded-md",
-      fill: "text-[var(--background)] bg-primary-500 rounded-md",
-      text: "text-primary-500",
+      stroke: "text-primary-700 border border-primary-400 bg-[var(--color-tile)]/80 rounded-full",
+      fill: "text-[var(--color-base-white)] bg-gradient-to-r from-primary-500 to-primary-700 rounded-full shadow-sm",
+      text: "text-primary-700",
     };
     const sizing = {
       xxl: "py-4 textL font-medium",
@@ -41,18 +41,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       xs: "py-1.5 textXS font-medium",
     };
     const hoverButton = {
-      stroke: "hover:border-primary-400 transform:border duration-200",
-      fill: "hover:bg-primary-600 transform:bg duration-200",
-      text: "hover:text-primary-600 transform:text duration-200",
+      stroke: "hover:border-primary-300 hover:bg-primary-50",
+      fill: "hover:from-primary-600 hover:to-primary-800 hover:shadow-md",
+      text: "hover:text-primary-600",
     };
     const pressedButton = {
-      stroke: "active:border-primary-400 active:text-primary-400",
-      fill: "active:bg-primary-700",
-      text: "active:text-primary-400",
+      stroke: "active:border-primary-500 active:text-primary-600",
+      fill: "active:from-primary-700 active:to-primary-900",
+      text: "active:text-primary-500",
     };
     const disabledButton = {
-      stroke: "disabled:border-primary-300 disabled:text-primary-300",
-      fill: "disabled:bg-primary-200",
+      stroke: "disabled:border-primary-200 disabled:text-primary-300",
+      fill: "disabled:from-primary-200 disabled:to-primary-300 disabled:shadow-none",
       text: "disabled:text-primary-300",
     };
 
@@ -62,6 +62,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type={rest.type ?? "button"}
         className={clsx(
           "flex items-center justify-center gap-x-3.5 px-5 cursor-pointer h-max disabled:cursor-not-allowed",
+          "transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-200",
           styling[buttonStyle],
           sizing[buttonSize],
           hoverButton[buttonStyle],

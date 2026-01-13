@@ -38,16 +38,20 @@ export default function ProductCard({
 
   return (
     <Link href={`/products/${id}`}>
-      <div className="flex flex-col gap-y-4 items-center p-4 border border-[var(--color-border-primary)] bg-[var(--color-tile)] rounded-lg w-[300px] cursor-pointer hover:scale-102 transition-transform duration-300">
-        <div className="flex justify-center items-center relative rounded-xl bg-base-white-2 w-full overflow-hidden">
-          <img src={imageURL} alt={itemName} className="h-[200px] object-contain rounded-xl" />
+      <div className="eco-card flex flex-col gap-y-4 items-center p-5 rounded-2xl w-[300px] cursor-pointer group">
+        <div className="flex justify-center items-center relative rounded-2xl bg-[var(--color-eco-mist)] w-full overflow-hidden border border-[var(--color-border-primary)]">
+          <img
+            src={imageURL}
+            alt={itemName}
+            className="h-[200px] object-contain rounded-2xl transition-transform duration-300 group-hover:scale-[1.04]"
+          />
           <button
             onClick={handleAddToCart}
             className={clsx(
-              "w-8 h-8 p-1 rounded-md bg-[var(--color-tile)] absolute top-4 left-4 flex items-center justify-center cursor-pointer",
-              "border border-[var(--color-border-primary)] shadow-sm transition-colors duration-200",
+              "w-9 h-9 p-1 rounded-full bg-[var(--color-tile)]/90 absolute top-4 left-4 flex items-center justify-center cursor-pointer",
+              "border border-[var(--color-border-primary)] shadow-sm transition-all duration-200 backdrop-blur",
               stock === 0 && "cursor-not-allowed opacity-50",
-              stock > 0 && "hover:bg-[var(--color-primary-50)]",
+              stock > 0 && "hover:bg-[var(--color-primary-50)] hover:border-primary-200 hover:shadow-md",
               stock > 0 && "active:bg-[var(--color-primary-100)]"
             )}
           >
