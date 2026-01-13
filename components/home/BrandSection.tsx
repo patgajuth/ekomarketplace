@@ -23,8 +23,8 @@ export default async function BrandSection() {
               imageURL={brand.imageUrl}
               title={brand.name}
               className="h-[72px] w-[72px]"
-              containerClassName="h-[120px] w-[140px] gap-y-4"
-              showTitle={false}
+              containerClassName="h-[150px] w-[160px] gap-y-3"
+              showTitle
             />
           </Link>
         ))}
