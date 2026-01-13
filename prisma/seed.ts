@@ -8,11 +8,11 @@ async function main() {
     data: [
       {
         id: 1,
-        name: "Zboża i kasze",
+        name: "Produkty sypkie",
         iconUrl: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=160&q=80",
-        imageUrl: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=900&q=80",
-        description: "Kasze, ryże i płatki z certyfikowanych upraw, idealne do codziennych posiłków.",
-        exploreInfo: "Filtruj po typie ziarna, czasie gotowania i pochodzeniu.",
+        imageUrl: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+        description: "Kasze, ryże, mąki i płatki z certyfikowanych upraw do codziennych posiłków.",
+        exploreInfo: "Filtruj po typie ziarna, czasie gotowania i gramaturze.",
       },
       {
         id: 2,
@@ -32,19 +32,27 @@ async function main() {
       },
       {
         id: 4,
-        name: "Przyprawy i zioła",
+        name: "Przyprawy i dodatki",
         iconUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=160&q=80",
         imageUrl: "https://images.unsplash.com/photo-1464306076886-da185f6a9d4e?auto=format&fit=crop&w=900&q=80",
-        description: "Suszone zioła, mieszanki przypraw i sól w naturalnych wariantach.",
+        description: "Suszone zioła, mieszanki przypraw, sól i dodatki w naturalnych wariantach.",
         exploreInfo: "Dobierz profil smaku oraz grubość mielenia.",
       },
       {
         id: 5,
-        name: "Napoje i śniadania",
+        name: "Napoje",
         iconUrl: "https://images.unsplash.com/photo-1451748266019-10a91ca3d86c?auto=format&fit=crop&w=160&q=80",
         imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80",
-        description: "Herbaty, kawy i granole na poranny start.",
+        description: "Herbaty, kawy i napary z transparentnym pochodzeniem.",
         exploreInfo: "Sortuj po poziomie kofeiny i gramaturze opakowania.",
+      },
+      {
+        id: 6,
+        name: "Śniadania i przekąski",
+        iconUrl: "https://images.unsplash.com/photo-1484981138541-3d074aa97716?auto=format&fit=crop&w=160&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&w=900&q=80",
+        description: "Granole, musli i zdrowe batoniki na szybki zastrzyk energii.",
+        exploreInfo: "Wybierz ulubioną bazę, dodatki i poziom słodkości.",
       },
     ],
   });
@@ -269,7 +277,7 @@ async function main() {
       {
         id: 16,
         brandId: 6,
-        categoryId: 5,
+        categoryId: 6,
         name: "Granola orzechowa 400 g",
         description: "Chrupalna granola z orzechami i miodem.",
         exploreInfo: "Bez rafinowanego cukru; świetna do jogurtu.",
@@ -281,7 +289,7 @@ async function main() {
       {
         id: 17,
         brandId: 6,
-        categoryId: 5,
+        categoryId: 6,
         name: "Musli z owocami 500 g",
         description: "Musli z suszonymi owocami i pestkami.",
         exploreInfo: "Szybkie śniadanie na co dzień.",
@@ -293,7 +301,7 @@ async function main() {
       {
         id: 18,
         brandId: 6,
-        categoryId: 5,
+        categoryId: 6,
         name: "Baton daktylowy kakao 45 g",
         description: "Miękki baton z daktyli i kakao.",
         exploreInfo: "Prosty skład, idealny na przekąskę.",
