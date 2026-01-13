@@ -36,7 +36,7 @@ export default function ProductsSection({ loading, error, products }: Props) {
   }
 
   return (
-    <div className="flex flex-wrap w-full gap-x-12 gap-y-8">
+    <div className="flex flex-wrap w-full gap-8">
       {products.map(({ id, name, price, imageUrl, stock, discount, category }) => (
         <ProductCard
           key={id}

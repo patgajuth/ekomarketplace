@@ -34,7 +34,7 @@ export default function ProductsClient({
 
   return (
     <div className="eco-surface flex flex-col lg:flex-row min-h-full w-full mt-10 rounded-3xl overflow-hidden">
-      <div className="flex flex-col gap-y-8 w-full lg:max-w-[360px] p-6 sm:p-8 lg:p-10 bg-[var(--color-surface)]">
+      <div className="flex flex-col gap-y-8 w-full lg:max-w-[300px] p-6 sm:p-8 lg:p-10 bg-[var(--color-surface)]">
         <CategoryDropdown
           limit={5}
           onChange={setCategories}
