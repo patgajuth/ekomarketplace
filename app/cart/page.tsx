@@ -29,7 +29,7 @@ export default function Cart() {
   return (
     <div className="flex gap-x-12 items-start w-full p-10">
       <div className="flex flex-col w-full gap-y-8">
-        {products.length > 1 && <Checkbox text="Select All" checked={selectAll} onChange={toggleSelectAll} />}
+        {products.length > 1 && <Checkbox text="Zaznacz wszystko" checked={selectAll} onChange={toggleSelectAll} />}
 
         {products.length === 0 ? (
           <div className="heading4 w-full text-center">Koszyk pusty</div>
@@ -58,17 +58,17 @@ export default function Cart() {
 
       <div className="flex flex-col border border-[var(--color-border-secondary)] bg-[var(--color-tile)] rounded-md gap-y-6 p-6 w-[500px]">
         <div className="flex flex-col textM font-semibold gap-y-4">
-          <span>Total Products</span>
+          <span>Łącznie produktów</span>
           <div className="flex justify-between textM font-medium">
-            Total Price ({selectedCount} items)
-            <span className="textL">${subtotal.toFixed(2)}</span>
+            Łączna cena ({selectedCount} szt.)
+            <span className="textL">{subtotal.toFixed(2)} zł</span>
           </div>
         </div>
 
         <hr className="text-[var(--color-border-secondary)]" />
         <div className="flex justify-between items-center textL font-medium">
-          Subtotal
-          <span className="heading5">${subtotal.toFixed(2)}</span>
+          Suma częściowa
+          <span className="heading5">{subtotal.toFixed(2)} zł</span>
         </div>
         <Button
           buttonStyle="fill"
@@ -76,7 +76,7 @@ export default function Cart() {
           disabled={!canCheckout}
           className={!canCheckout ? "opacity-50 cursor-not-allowed" : ""}
         >
-          Checkout
+          Do kasy
         </Button>
       </div>
     </div>

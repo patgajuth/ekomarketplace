@@ -53,7 +53,7 @@ export function useSuccessLogic() {
   const [invoiceNumber, setInvoiceNumber] = useState<string>("");
   const [transactionDate, setTransactionDate] = useState<string>("");
   const [paymentMethod] = useState<string>("Apple Pay");
-  const [shippingMethod] = useState<string>("NexusHub Courier");
+  const [shippingMethod] = useState<string>("Kurier EkoMarketPlace");
   const [items, setItems] = useState<SuccessOrderItem[]>([]);
   const [totals, setTotals] = useState<Totals | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -64,10 +64,10 @@ export function useSuccessLogic() {
       try {
         setLoading(true);
         const raw = localStorage.getItem("checkoutCart");
-        if (!raw) throw new Error("No checkoutCart in localStorage");
+        if (!raw) throw new Error("Brak checkoutCart w localStorage");
 
         const localItems: LocalCheckoutItem[] = JSON.parse(raw);
-        if (!Array.isArray(localItems) || localItems.length === 0) throw new Error("Empty cart");
+        if (!Array.isArray(localItems) || localItems.length === 0) throw new Error("Pusty koszyk");
 
         const anyWithAddress = localItems.find((li) => li.address && li.makeMain);
         if (anyWithAddress) {
@@ -145,7 +145,7 @@ export function useSuccessLogic() {
         localStorage.setItem("cart", JSON.stringify(updatedMain));
       } catch (err) {
         console.error("Finalization error:", err);
-        setError("Order finalization failed");
+        setError("Finalizacja zamówienia nie powiodła się");
       } finally {
         setLoading(false);
       }

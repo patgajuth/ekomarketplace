@@ -63,8 +63,8 @@ export default function ProductCard({
           <div className="flex flex-col gap-y-2">
             <span className="textL">{itemName}</span>
             <div className="flex gap-x-2.5 items-center">
-              <span className="heading5 font-semibold">${finalPrice.toFixed(2)}</span>
-              {discount !== 0 && <span className="textL line-through">${price.toFixed(2)}</span>}
+              <span className="heading5 font-semibold">{finalPrice.toFixed(2)} zł</span>
+              {discount !== 0 && <span className="textL line-through">{price.toFixed(2)} zł</span>}
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function RecommendationSection() {
         setProducts(data);
       } catch (err) {
         console.error("Błąd podczas pobierania rekomendacji:", err);
-        setError("Nie udało się pobrać rekomendowanych produktów");
+        setError("Nie udało się pobrać polecanych produktów");
       } finally {
         setLoading(false);
       }
@@ -39,15 +39,15 @@ export default function RecommendationSection() {
 
   if (loading) {
     return (
-      <TileContainer title="Eco picks">
-        <Loading text="Ładowanie eko polecanych…" />
+      <TileContainer title="Polecane produkty">
+        <Loading text="Ładowanie polecanych produktów…" />
       </TileContainer>
     );
   }
 
   if (error) {
     return (
-      <TileContainer title="Eco picks">
+      <TileContainer title="Polecane produkty">
         <div className="p-8 text-center text-red-500">{error}</div>
       </TileContainer>
     );
@@ -58,7 +58,7 @@ export default function RecommendationSection() {
   }
 
   return (
-    <TileContainer title="Eco picks">
+    <TileContainer title="Polecane produkty">
       {products.map((product) => (
         <ProductCard
           key={product.id}

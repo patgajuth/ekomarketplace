@@ -9,9 +9,9 @@ function Footer() {
         <div className="flex flex-col gap-y-6 flex-grow basis-0">
           <Logo size="secondary" />
           <p className="textM font-medium text-[var(--textColor-secondary)]">
-            © 2023 NexusHub.
+            © 2023 EkoMarketPlace.
             <br />
-            All rights reserved.
+            Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-x-[12px] flex-wrap">
             <PaymentLogo imgSrc="https://i.ibb.co/JZQJqLQ/visa.png" alt="Visa" />
@@ -22,10 +22,10 @@ function Footer() {
           </div>
         </div>
         <div className="flex gap-x-6 flex-grow basis-0 flex-wrap">
-          <MenuSection title="Company" items={["About Us", "Contact", "Partner"]} />
-          <MenuSection title="Social" items={["Instagram", "Twitter", "Facebook", "Linkedin"]} />
-          <MenuSection title="FAQ" items={["Account", "Deliveries", "Orders", "Payments"]} />
-          <MenuSection title="Resources" items={["E-books", "Tutorials", "Course", "Blog"]} />
+          <MenuSection title="Firma" items={["O nas", "Kontakt", "Partnerzy"]} />
+          <MenuSection title="Social media" items={["Instagram", "Twitter", "Facebook", "LinkedIn"]} />
+          <MenuSection title="FAQ" items={["Konto", "Dostawy", "Zamówienia", "Płatności"]} />
+          <MenuSection title="Materiały" items={["E-booki", "Poradniki", "Kursy", "Blog"]} />
         </div>
       </div>
     </footer>

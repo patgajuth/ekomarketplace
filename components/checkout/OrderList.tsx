@@ -18,7 +18,7 @@ type OrderListProps = {
 };
 
 export default function OrderList({ items, protections, onToggleProtection }: OrderListProps) {
-  if (items.length === 0) return <div>There are no products to order.</div>;
+  if (items.length === 0) return <div>Brak produktów do zamówienia.</div>;
 
   return (
     <div className="flex flex-col w-full gap-y-6">

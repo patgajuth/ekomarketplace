@@ -39,7 +39,7 @@ export default function CartProductItem({
             onClick={() => setWriteNote((prev) => !prev)}
             className="text-[var(--color-primary)] h-max textM cursor-pointer pr-6 border-r border-r-[var(--color-border-primary)]"
           >
-            {writeNote ? "Hide Note" : "Write Note"}
+            {writeNote ? "Ukryj notatkę" : "Dodaj notatkę"}
           </button>
           <Counter max={max} value={value} onChange={onChange} />
         </div>
@@ -47,7 +47,7 @@ export default function CartProductItem({
 
       <div className={clsx(writeNote ? "flex" : "hidden", "flex-col gap-y-2")}>
         <hr className="text-[var(--color-border-secondary)] mb-2" />
-        <span className="textL font-medium">Note:</span>
+        <span className="textL font-medium">Notatka:</span>
         <textarea
           value={note}
           onChange={(e) => onNoteChange?.(e.target.value)}

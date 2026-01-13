@@ -14,7 +14,7 @@ type BrandDropdownClientProps = {
 export default function BrandDropdown({
   limit = 3,
   onChange,
-  initial = ["All"],
+  initial = ["Wszystkie"],
   options,
 }: BrandDropdownClientProps) {
   const [selected, setSelected] = useState<string[]>(initial);
@@ -24,17 +24,17 @@ export default function BrandDropdown({
 
   const handleToggle = (option: string) => {
     setSelected((prev) => {
-      if (option === "All") {
-        if (prev.includes("All")) {
+      if (option === "Wszystkie") {
+        if (prev.includes("Wszystkie")) {
           return [];
         }
         return [...options];
       }
 
-      const nonAllOptions = options.filter((o) => o !== "All");
+      const nonAllOptions = options.filter((o) => o !== "Wszystkie");
       let newSelected: string[];
 
-      if (prev.includes("All")) {
+      if (prev.includes("Wszystkie")) {
         const specificSelected = [...nonAllOptions];
         if (specificSelected.includes(option)) {
           newSelected = specificSelected.filter((o) => o !== option);
@@ -58,7 +58,7 @@ export default function BrandDropdown({
   };
 
   return (
-    <DropdownComponents withTitle title="Brand" limit={limit} defaultOpen>
+    <DropdownComponents withTitle title="Marki" limit={limit} defaultOpen>
       {options.map((option) => (
         <Checkbox
           key={option}

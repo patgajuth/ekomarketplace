@@ -12,13 +12,13 @@ export interface OrderWithItems {
 
 export default function TransactionsList({ orders }: { orders: OrderWithItems[] }) {
   if (orders.length === 0) {
-    return <p className="heading5">Not found transactions</p>;
+    return <p className="heading5">Brak transakcji</p>;
   }
 
   return (
     <div className="flex flex-col gap-y-8 w-full">
       <h2 className="text-xl w-1/2 text-center border-b font-medium text-[var(--color-primary)] border-[var(--color-primary)]">
-        Transactions
+        Transakcje
       </h2>
       {orders.map((order) => (
         <TransactionCard key={order.id} id={order.id} createdAt={order.createdAt} items={order.items} />

@@ -12,7 +12,7 @@ export default async function CategorySection() {
     if (!categories.length) return null;
 
     return (
-      <TileContainer title="Eco categories">
+      <TileContainer title="Kategorie żywności">
         {categories.map((cat) => (
           <Link key={cat.id + cat.name} href={`/products?category=${encodeURIComponent(cat.name)}`}>
             <Tile imageURL={cat.iconUrl} title={cat.name} className="h-[80px]" />
@@ -23,8 +23,8 @@ export default async function CategorySection() {
   } catch (err) {
     console.error("Błąd podczas pobierania kategorii:", err);
     return (
-      <TileContainer title="Category">
-        <div className="p-8 text-center text-red-500">Failed to download category</div>
+      <TileContainer title="Kategorie">
+        <div className="p-8 text-center text-red-500">Nie udało się pobrać kategorii</div>
       </TileContainer>
     );
   }

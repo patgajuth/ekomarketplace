@@ -14,12 +14,12 @@ export default function SortedSelect({ onChange }: SortedSelectProps) {
     itemsPerPageLabels,
     selectSortBy,
     selectItemsPerPage,
-  } = useSortedSelect({ onChange });
+      } = useSortedSelect({ onChange });
 
   return (
     <div className="flex gap-x-15">
       <div className="flex items-center gap-x-4">
-        <span className="heading7 font-semibold">Sort by</span>
+        <span className="heading7 font-semibold">Sortuj</span>
         <Dropdown
           onChange={selectSortBy}
           sizeDropdown="s"
@@ -28,7 +28,7 @@ export default function SortedSelect({ onChange }: SortedSelectProps) {
         />
       </div>
       <div className="flex items-center gap-x-4">
-        <span className="heading7 font-semibold">Show</span>
+        <span className="heading7 font-semibold">Pokaż</span>
         <Dropdown
           onChange={selectItemsPerPage}
           sizeDropdown="s"

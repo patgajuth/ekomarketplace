@@ -56,7 +56,9 @@ const TileContainer: React.FC<TileContainerProps> = ({ children, title }) => {
     <section className="max-w-[1440px] w-full animate-fade-up">
       <header className={headerClasses}>
         <div className="flex flex-col gap-2">
-          <span className="textXS uppercase tracking-[0.24em] text-[var(--textColor-tertiary)]">Curated</span>
+          <span className="textXS uppercase tracking-[0.24em] text-[var(--textColor-tertiary)]">
+            Wyselekcjonowane
+          </span>
           <h2 className="heading4 font-medium text-[var(--textColor-primary)]">{title}</h2>
         </div>
         {hasOverflow && (
@@ -66,13 +68,17 @@ const TileContainer: React.FC<TileContainerProps> = ({ children, title }) => {
             aria-controls={contentId}
             className="flex items-center gap-x-3 textM font-medium text-primary-700 cursor-pointer transition-colors duration-200 hover:text-primary-600"
           >
-            {expanded ? "See Less" : "See All"}
+            {expanded ? "Zwiń" : "Zobacz wszystko"}
             <RightArrowIcon className={clsx("transition-transform duration-300", expanded && "rotate-180")} />
           </button>
         )}
       </header>
 
-      <div id={contentId} ref={wrapperRef} className={clsx(wrapperClasses, "p-1")}>
+      <div
+        id={contentId}
+        ref={wrapperRef}
+        className={clsx(wrapperClasses, "p-1 scrollbar-thin scrollbar-thumb-primary-300 scrollbar-track-transparent")}
+      >
         {children}
       </div>
     </section>

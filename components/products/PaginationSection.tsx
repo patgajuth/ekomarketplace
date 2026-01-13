@@ -25,7 +25,7 @@ function PaginationSection({ totalPages, onChange }: { totalPages: number; onCha
           buttonSize="s"
           onClick={() => setPage((page) => (page > 1 ? page - 1 : page))}
         >
-          Previous
+          Poprzednia
         </Button>
         <Button
           withRightIcon
@@ -35,7 +35,7 @@ function PaginationSection({ totalPages, onChange }: { totalPages: number; onCha
           buttonStyle="stroke"
           onClick={() => setPage((page) => (page === totalPages ? page : page + 1))}
         >
-          Next
+          Następna
         </Button>
       </div>
     </div>

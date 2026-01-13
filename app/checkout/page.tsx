@@ -26,25 +26,25 @@ export default function CheckoutPage() {
   
 
   if (status === "loading") {
-    return <Loading text="Verifying the session..."/>;
+    return <Loading text="Weryfikuję sesję..." />;
   }
 
   return (
     <div className="flex w-full gap-x-12 px-10">
       <div className="flex flex-col w-full gap-y-10">
-        <CheckoutSection label="Your Order">
+        <CheckoutSection label="Twoje zamówienie">
           <OrderList items={items} protections={protections} onToggleProtection={toggleProtection} />
         </CheckoutSection>
 
-        <CheckoutSection label="Address">
+        <CheckoutSection label="Adres">
           <AddressSection onAddressChange={setAddress} onMakeMainChange={setMakeMain} />
         </CheckoutSection>
 
-        <CheckoutSection label="Shipping">
-          <ShieldIcon className="text-success-500" /> NexusHub Courier
+        <CheckoutSection label="Dostawa">
+          <ShieldIcon className="text-success-500" /> Kurier EkoMarketPlace
         </CheckoutSection>
 
-        <CheckoutSection label="Payment Method">
+        <CheckoutSection label="Metoda płatności">
           <div className="flex items-center gap-x-2">
             <PaymentLogo imgSrc="https://i.ibb.co/wZLxPRLy/apple-pay.png" alt="ApplePay" />
             ApplePay

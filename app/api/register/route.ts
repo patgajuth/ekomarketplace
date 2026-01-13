@@ -12,15 +12,15 @@ const schema = z
     password: z
       .string()
       .min(8)
-      .regex(/[A-Z]/, "At least one uppercase letter")
-      .regex(/[a-z]/, "At least one lowercase letter")
-      .regex(/[0-9]/, "At least one number"),
+      .regex(/[A-Z]/, "Co najmniej jedna wielka litera")
+      .regex(/[a-z]/, "Co najmniej jedna mała litera")
+      .regex(/[0-9]/, "Co najmniej jedna cyfra"),
     confirmPassword: z.string(),
     country: z.string().nonempty(),
-    firstName: z.string().min(1, "First name is required"),
+    firstName: z.string().min(1, "Imię jest wymagane"),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
+    message: "Hasła nie są takie same",
     path: ["confirmPassword"],
   });
 
@@ -35,13 +35,13 @@ export async function POST(req: Request) {
 
     if (await prisma.user.findUnique({ where: { email } })) {
       return NextResponse.json(
-        { errors: { email: { _errors: ["User with this email already exists"] } } },
+        { errors: { email: { _errors: ["Użytkownik z takim e-mailem już istnieje"] } } },
         { status: 400 }
       );
     }
     if (await prisma.user.findUnique({ where: { phone } })) {
       return NextResponse.json(
-        { errors: { phone: { _errors: ["User with this phone already exists"] } } },
+        { errors: { phone: { _errors: ["Użytkownik z takim numerem telefonu już istnieje"] } } },
         { status: 400 }
       );
     }
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ id: user.id });
   } catch (err) {
     return NextResponse.json(
-      { message: "Server error", details: err },
+      { message: "Błąd serwera", details: err },
       { status: 500 }
     );
   }

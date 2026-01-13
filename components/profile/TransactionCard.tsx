@@ -18,9 +18,9 @@ export default function TransactionCard({ id, createdAt, items }: TransactionCar
         <OrderIcon className="text-[var(--color-primary)]" />
         <div className="w-full flex flex-col gap-y-1">
           <span className="textM text-[var(--textColor-secondary)]">
-            {new Date(createdAt).toLocaleString()}
+            {new Date(createdAt).toLocaleString("pl-PL")}
           </span>
-          <span className="textL font-medium">Order #{id}</span>
+          <span className="textL font-medium">Zamówienie #{id}</span>
         </div>
       </div>
       <OrderItems items={items} />

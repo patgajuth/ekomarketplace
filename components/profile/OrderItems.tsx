@@ -26,9 +26,9 @@ export default function OrderItems({ items }: { items: OrderItemDetail[] }) {
               <span className="ml-2">x{quantity}</span>
             </span>
             <div className="ml-6">
-              <div>${product.price.toFixed(2)}</div>
-              {note && <div className="textXS italic text-[var(--textColor-tertiary)]">Note: {note}</div>}
-              {protection && <div className="textXS text-success-500">Protection added</div>}
+              <div>{product.price.toFixed(2)} zł</div>
+              {note && <div className="textXS italic text-[var(--textColor-tertiary)]">Notatka: {note}</div>}
+              {protection && <div className="textXS text-success-500">Dodano ochronę</div>}
             </div>
           </li>
         ))}

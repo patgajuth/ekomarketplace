@@ -9,10 +9,10 @@ type QuantitySelectorProps = {
 export default function QuantitySelector({ stock, value, onChange }: QuantitySelectorProps) {
   return (
     <div className="flex flex-col gap-y-3.5">
-      <span className="textL font-medium text-[var(--textColor-tertiary)]">Quantity</span>
+      <span className="textL font-medium text-[var(--textColor-tertiary)]">Ilość</span>
       <div className="flex gap-x-4 items-center">
         <Counter max={stock} value={value} onChange={onChange} />
-        <span className="textM font-medium">Stock: {stock}</span>
+        <span className="textM font-medium">Dostępne: {stock}</span>
       </div>
     </div>
   );

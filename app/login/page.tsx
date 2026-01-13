@@ -30,14 +30,14 @@ export default function SignInForm() {
       <Logo size="secondary" />
       <div className="w-[448px] p-6 bg-[var(--color-tile)] border border-[var(--color-border-secondary)] rounded-md">
         <div className="flex justify-between items-center">
-          <h2 className="heading6">Sign in</h2>
+          <h2 className="heading6">Zaloguj się</h2>
           {step === "password" && (
             <Button
               withLeftIcon
               onClick={handleBackToIdentifier}
               leftIcon={<LeftArrowIcon className="text-xs" />}
             >
-              Back to Email/phone number
+              Wróć do e-maila/telefonu
             </Button>
           )}
         </div>
@@ -48,9 +48,9 @@ export default function SignInForm() {
             <>
               <InputField
                 withLabel
-                label="Email or phone number"
+                label="E-mail lub numer telefonu"
                 type="text"
-                placeholder="Enter email or phone number"
+                placeholder="Wpisz e-mail lub numer telefonu"
                 value={identifier}
                 onChange={(e) => handleIdentifierChange(e.target.value)}
                 onKeyDown={(e) => {
@@ -68,16 +68,16 @@ export default function SignInForm() {
                 type="button"
                 onClick={handleIdentifierContinue}
               >
-                Continue
+                Dalej
               </Button>
             </>
           ) : (
             <>
               <InputField
                 withLabel
-                label="Password"
+                label="Hasło"
                 type={showPassword ? "text" : "password"}
-                placeholder="Your password"
+                placeholder="Twoje hasło"
                 value={password}
                 onChange={(e) => handlePasswordChange(e.target.value)}
                 withRightIcon
@@ -96,9 +96,9 @@ export default function SignInForm() {
                 }
               />
               <div className="flex justify-between items-center">
-                <Checkbox sizeCheckbox="l" text="Save password" />
+                <Checkbox sizeCheckbox="l" text="Zapamiętaj hasło" />
                 <Link href="#" className="textM font-medium">
-                  Forgot your password?
+                  Nie pamiętasz hasła?
                 </Link>
               </div>
               {error && <p className="text-red-500">{error}</p>}
@@ -107,14 +107,14 @@ export default function SignInForm() {
                 type="submit"
                 disabled={!canSubmitPassword}
               >
-                Sign in
+                Zaloguj się
               </Button>
             </>
           )}
           <p className="text-center textM">
-            Don’t have an account?{" "}
+            Nie masz konta?{" "}
             <Link href="/register" className="font-semibold">
-              Register
+              Zarejestruj się
             </Link>
           </p>
         </form>

@@ -20,7 +20,7 @@ function ProductInfo({ imageUrl, name, price, category }: ProductInfoProps) {
           <span className="heading7 font-medium">{name}</span>
           <Badge text={category} className="w-max" />
         </div>
-        <span className="heading6 font-medium">${price.toFixed(2)}</span>
+        <span className="heading6 font-medium">{price.toFixed(2)} zł</span>
       </div>
     </div>
   );

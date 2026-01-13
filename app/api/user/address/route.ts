@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
 export async function GET() {
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Brak autoryzacji" }, { status: 401 });
   }
   const userId = Number(session.user.id);
 
@@ -19,14 +19,14 @@ export async function GET() {
     return NextResponse.json({ address });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Cannot fetch address" }, { status: 500 });
+    return NextResponse.json({ error: "Nie udało się pobrać adresu" }, { status: 500 });
   }
 }
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Brak autoryzacji" }, { status: 401 });
   }
   const userId = Number(session.user.id);
 
@@ -40,12 +40,12 @@ export async function POST(req: NextRequest) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    return NextResponse.json({ error: "Nieprawidłowy JSON" }, { status: 400 });
   }
 
   const { country, province, city, postalCode } = body;
   if (!country || !province || !city || !postalCode) {
-    return NextResponse.json({ error: "All address fields are required" }, { status: 400 });
+    return NextResponse.json({ error: "Wszystkie pola adresu są wymagane" }, { status: 400 });
   }
 
   try {
@@ -64,6 +64,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ address }, { status: existing ? 200 : 201 });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: `"Cannot save address"${(error as Error).message}` }, { status: 500 });
+    return NextResponse.json({ error: `Nie udało się zapisać adresu: ${(error as Error).message}` }, { status: 500 });
   }
 }

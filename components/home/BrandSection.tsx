@@ -12,7 +12,7 @@ export default async function BrandSection() {
     if (!brands.length) return null;
 
     return (
-      <TileContainer title="Partner brands">
+      <TileContainer title="Marki partnerskie">
         {brands.map((brand: Brand) => (
           <Link key={brand.id + brand.name} href={`/products?brand=${encodeURIComponent(brand.name)}`}>
             <Tile key={brand.id} imageURL={brand.imageUrl} title={brand.name} className="h-[46px]" />
@@ -23,8 +23,8 @@ export default async function BrandSection() {
   } catch (err) {
     console.error("Błąd podczas pobierania marek:", err);
     return (
-      <TileContainer title="Brand">
-        <div className="p-8 text-center text-red-500">Failed to download brands</div>
+      <TileContainer title="Marki">
+        <div className="p-8 text-center text-red-500">Nie udało się pobrać marek</div>
       </TileContainer>
     );
   }

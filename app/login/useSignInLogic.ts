@@ -37,7 +37,7 @@ export function useSignInLogic(): UseSignInLogicReturn {
   const handleIdentifierContinue = useCallback(() => {
     if (!isValidIdentifier) {
       setError(
-        "Enter a valid email (e.g. example@gmail.com) or phone number (9-15 digits)"
+        "Wpisz poprawny e-mail (np. example@gmail.com) lub numer telefonu (9–15 cyfr)"
       );
       return;
     }
@@ -81,9 +81,9 @@ export function useSignInLogic(): UseSignInLogicReturn {
         password,
       });
       if (res?.error) {
-        setError("Incorrect e-mail/phone or password");
+        setError("Nieprawidłowy e-mail/telefon lub hasło");
       } else {
-        alert({ type: "success", message: "Logged in successfully" });
+        alert({ type: "success", message: "Pomyślnie zalogowano" });
         router.push("/");
       }
     },

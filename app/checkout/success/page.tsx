@@ -31,7 +31,7 @@ export default function CheckoutSuccessPage() {
   }
 
   if (!totals) {
-    return <Loading text="Loading your order…"/>;
+    return <Loading text="Ładowanie zamówienia…"/>;
   }
 
   return (
@@ -45,7 +45,9 @@ export default function CheckoutSuccessPage() {
       />
       <OrderList items={items} />
       <SummaryDetails totals={totals} />
-      <Button buttonStyle="fill" onClick={() => router.push("/")}>Continue Shopping</Button>
+      <Button buttonStyle="fill" onClick={() => router.push("/")}>
+        Wróć do zakupów
+      </Button>
     </div>
   );
 }

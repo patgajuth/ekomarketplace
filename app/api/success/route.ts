@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
     if (!userId || !address || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json(
-        { error: "Incorrect order data" },
+        { error: "Nieprawidłowe dane zamówienia" },
         { status: 400 }
       );
     }
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
     return NextResponse.json(order, { status: 201 });
   } catch (error: unknown) {
     console.error("Order creation error:", error);
-    const message = error instanceof Error ? error.message : "Unknown server error";
+    const message = error instanceof Error ? error.message : "Nieznany błąd serwera";
     return NextResponse.json(
       { error: message },
       { status: 500 }

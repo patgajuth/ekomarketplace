@@ -11,7 +11,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
     <div className="flex flex-col w-[420px] gap-y-8">
       <div className="flex justify-center p-3 border border-[var(--color-border-secondary)]  bg-[var(--color-tile)] rounded-md h-[340px] ">
         <div className="flex justify-center w-full h-full overflow-hidden rounded-md bg-[var(--color-border-primary)]">
-          <img className="h-full" src={images[selected]} alt={`Product image ${selected + 1}`} />
+          <img className="h-full" src={images[selected]} alt={`Zdjęcie produktu ${selected + 1}`} />
         </div>
       </div>
       <div className="flex gap-x-4">
@@ -24,7 +24,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               selected === idx ? "border-orange-400" : "border-transparent hover:border-gray-300"
             )}
           >
-            <img src={img} alt={`Thumbnail ${idx + 1}`} className="h-full object-cover rounded-md" />
+            <img src={img} alt={`Miniatura ${idx + 1}`} className="h-full object-cover rounded-md" />
           </div>
         ))}
       </div>

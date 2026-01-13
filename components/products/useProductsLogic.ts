@@ -16,7 +16,7 @@ export function useProductsLogic() {
   const [categories, setCategories] = useState<string[]>(initialCategories);
   const [brands, setBrands] = useState<string[]>(initialBrands);
   const [sorted, setSorted] = useState<{ sortBy: string; itemsPerPage: string }>({
-    sortBy: "Latest",
+    sortBy: "latest",
     itemsPerPage: "9",
   });
   const [price, setPrice] = useState<{ minPrice: string; maxPrice: string }>({ minPrice: "", maxPrice: "" });
@@ -34,12 +34,12 @@ export function useProductsLogic() {
     params.set("limit", sorted.itemsPerPage);
     params.set("sorted", sorted.sortBy);
 
-    const cats = categories.filter((c) => c !== "All")
+    const cats = categories.filter((c) => c !== "Wszystkie");
     if (cats.length > 0) {
       params.set("category", cats.join("_"));
     }
 
-    const brs = brands.filter((b) => b !== "All");
+    const brs = brands.filter((b) => b !== "Wszystkie");
     if (brs.length > 0) {
       params.set("brand", brs.join("_"));
     }

@@ -46,7 +46,7 @@ const Header = () => {
           </div>
         ) : (
           <Button onClick={() => router.push("/login")} buttonStyle="fill">
-            Sign in
+            Zaloguj się
           </Button>
         )}
       </div>
@@ -54,10 +54,10 @@ const Header = () => {
       {isLoggedIn && (
         <nav className="flex gap-x-8 textM font-medium bg-[var(--color-eco-mist)]/70 border border-[var(--color-border-primary)] rounded-full px-6 py-2 w-max">
           <Link href="/" className={clsx(linkBase, pathname === "/" && linkActive)}>
-            Home
+            Start
           </Link>
           <Link href="/products" className={clsx(linkBase, pathname === "/products" && linkActive)}>
-            Products
+            Produkty
           </Link>
         </nav>
       )}

@@ -7,21 +7,21 @@ import { useFetchWithRetry } from "@/hooks/useFetchWithRetry";
 
 const schema = z
   .object({
-    email: z.string().email({ message: "Invalid email address" }),
-    phone: z.string().min(9, { message: "Phone number is too short" }),
+    email: z.string().email({ message: "Nieprawidłowy adres e-mail" }),
+    phone: z.string().min(9, { message: "Numer telefonu jest za krótki" }),
     password: z
       .string()
-      .min(8, "Minimum 8 characters")
-      .regex(/[A-Z]/, "At least one uppercase")
-      .regex(/[a-z]/, "At least one lowercase")
-      .regex(/[0-9]/, "At least one number"),
+      .min(8, "Minimum 8 znaków")
+      .regex(/[A-Z]/, "Co najmniej jedna wielka litera")
+      .regex(/[a-z]/, "Co najmniej jedna mała litera")
+      .regex(/[0-9]/, "Co najmniej jedna cyfra"),
     confirmPassword: z.string(),
-    country: z.string().nonempty("Select a country"),
-    firstName: z.string().min(1, "First name is required"),
-    terms: z.boolean().refine((val) => val === true, { message: "You must accept the terms" }),
+    country: z.string().nonempty("Wybierz kraj"),
+    firstName: z.string().min(1, "Imię jest wymagane"),
+    terms: z.boolean().refine((val) => val === true, { message: "Musisz zaakceptować regulamin" }),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
+    message: "Hasła nie są takie same",
     path: ["confirmPassword"],
   });
 
@@ -64,14 +64,14 @@ export function useCreateAccountLogic() {
           }
         );
       } else {
-        alert({ type: "danger", message: "Registration failed" });
+        alert({ type: "danger", message: "Rejestracja nie powiodła się" });
       }
       return;
     }
 
     setSuccess(true);
     reset();
-    alert({ type: "success", message: "Account created successfully!" });
+    alert({ type: "success", message: "Konto utworzone pomyślnie!" });
   });
 
   const handleCountryChange = (val: string) => {

@@ -29,14 +29,14 @@ export default function CreateAccount() {
     return (
       <div className="flex flex-col gap-y-10 my-20 items-center">
         <ConfirmIcon className="display1 text-success-500" />
-        <div className="flex flex-col gap-y-4 items-center text-center">
-          <span className="heading1 font-bold">Thank you!</span>
-          <span className="heading6 font-medium">You have successfully registered</span>
+      <div className="flex flex-col gap-y-4 items-center text-center">
+          <span className="heading1 font-bold">Dziękujemy!</span>
+          <span className="heading6 font-medium">Rejestracja zakończona pomyślnie</span>
           <span className="textL text-[var(--textColor-tertiary)]">
-            Please check your e-mail for further information. Let’s explore our products and enjoy many gifts.
+            Sprawdź e-mail, aby poznać szczegóły. Odkrywaj nasze produkty i korzystaj z promocji.
           </span>
           <span className="textL text-[var(--textColor-tertiary)]">
-            Having problems? <span className="text-[var(--color-primary)] ml-1">Contact us</span>
+            Masz problem? <span className="text-[var(--color-primary)] ml-1">Skontaktuj się z nami</span>
           </span>
         </div>
       </div>
@@ -48,16 +48,16 @@ export default function CreateAccount() {
       <Logo size="secondary" />
       <div className="flex flex-col gap-y-8 p-6 border border-[var(--color-border-secondary)] rounded-md bg-[var(--color-tile)] w-full">
         <div>
-          <p className="text-2xl font-medium">Create Account</p>
+          <p className="text-2xl font-medium">Utwórz konto</p>
           <hr className="text-[var(--color-border-secondary)] mt-5" />
         </div>
 
         <form className="flex flex-col gap-y-6" onSubmit={submitHandler}>
           <InputField
             withLabel
-            label="Email"
+            label="E-mail"
             type="email"
-            placeholder="Your Email"
+            placeholder="Twój e-mail"
             {...register("email")}
             errorMessage={errors.email?.message}
             destructive={!!errors.email}
@@ -66,9 +66,9 @@ export default function CreateAccount() {
 
           <InputField
             withLabel
-            label="First Name"
+            label="Imię"
             type="text"
-            placeholder="Your First Name"
+            placeholder="Twoje imię"
             {...register("firstName")}
             errorMessage={errors.firstName?.message}
             destructive={!!errors.firstName}
@@ -77,9 +77,9 @@ export default function CreateAccount() {
 
           <InputField
             withLabel
-            label="Mobile Number"
+            label="Numer telefonu"
             type="text"
-            placeholder="Mobile Number"
+            placeholder="Numer telefonu"
             {...register("phone")}
             errorMessage={errors.phone?.message}
             destructive={!!errors.phone}
@@ -88,9 +88,9 @@ export default function CreateAccount() {
 
           <InputField
             withLabel
-            label="Password"
+            label="Hasło"
             type={showPassword ? "text" : "password"}
-            placeholder="Password"
+            placeholder="Hasło"
             withRightIcon
             rightIcon={
               <button className="cursor-pointer" type="button" onClick={toggleShowPassword}>
@@ -101,14 +101,14 @@ export default function CreateAccount() {
             errorMessage={errors.password?.message}
             destructive={!!errors.password}
             withSupportText
-            supportText="At least 8 chars, 1 uppercase, 1 lowercase, 1 number"
+            supportText="Min. 8 znaków, 1 wielka litera, 1 mała litera, 1 cyfra"
           />
 
           <InputField
             withLabel
-            label="Confirm Password"
+            label="Potwierdź hasło"
             type={showConfirmPassword ? "text" : "password"}
-            placeholder="Confirm Password"
+            placeholder="Potwierdź hasło"
             withRightIcon
             rightIcon={
               <button className="cursor-pointer" type="button" onClick={toggleShowConfirmPassword}>
@@ -122,10 +122,10 @@ export default function CreateAccount() {
           />
 
           <div className="flex flex-col gap-y-4 textL font-medium">
-            Country or region
+            Kraj lub region
             <Dropdown
-              placeholder="Country or region"
-              options={["Indonesia", "Poland", "USA"]}
+              placeholder="Kraj lub region"
+              options={["Polska", "USA", "Niemcy"]}
               className="w-full"
               onChange={handleCountryChange}
             />
@@ -138,15 +138,15 @@ export default function CreateAccount() {
               onChange={(e) => handleTermsChange(e.target.checked)}
             />
             <p className="text-sm">
-              By creating an account and checking, you agree to the{' '}
-              <span className="text-[var(--color-primary)]">Conditions of Use</span> and{' '}
-              <span className="text-[var(--color-primary)]">Privacy Notice.</span>
+              Tworząc konto i zaznaczając, akceptujesz{' '}
+              <span className="text-[var(--color-primary)]">Warunki korzystania</span> oraz{' '}
+              <span className="text-[var(--color-primary)]">Politykę prywatności.</span>
             </p>
           </div>
           {errors.terms && <p className="text-error text-sm">{errors.terms.message}</p>}
 
           <Button buttonStyle="fill" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Creating..." : "Create Account"}
+            {isSubmitting ? "Tworzenie..." : "Utwórz konto"}
           </Button>
         </form>
       </div>

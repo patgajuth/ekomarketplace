@@ -17,7 +17,7 @@ type OrderListProps = {
 export default function OrderList({ items }: OrderListProps) {
   return (
     <div className="flex flex-col gap-y-6">
-      <span className="textL font-medium">Your Order</span>
+      <span className="textL font-medium">Twoje zamówienie</span>
       {items.map((item) => (
         <div
           key={item.id}

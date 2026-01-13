@@ -62,9 +62,9 @@ export default function AddressSection({ onAddressChange, onMakeMainChange }: Ad
     <div className="flex flex-col w-full gap-y-6">
       <div className="flex w-full">
         {!!existingAddress && (
-          <AddressButton isActive={!isNew} label="Existing Address" onClick={() => setIsNew(false)} />
+          <AddressButton isActive={!isNew} label="Istniejący adres" onClick={() => setIsNew(false)} />
         )}
-        <AddressButton isActive={isNew} label="New Address" onClick={() => setIsNew(true)} />
+        <AddressButton isActive={isNew} label="Nowy adres" onClick={() => setIsNew(true)} />
       </div>
 
       <div className="flex flex-col w-full gap-y-4">
@@ -72,15 +72,15 @@ export default function AddressSection({ onAddressChange, onMakeMainChange }: Ad
           <div className="flex flex-col gap-y-8">
             <div className="flex flex-col gap-y-3">
               <div className="flex items-center gap-x-4 textM font-medium">
-                Address <Badge text="Main Address" />
+                Adres <Badge text="Główny adres" />
               </div>
               <p className="textL mb-2">{existingAddress}</p>
             </div>
             <div className="flex justify-between">
-              <AddressPart label="Country" text={dataAddress.country} />
-              <AddressPart label="Province" text={dataAddress.province} />
-              <AddressPart label="City" text={dataAddress.city} />
-              <AddressPart label="Postal Code" text={dataAddress.postalCode} />
+              <AddressPart label="Kraj" text={dataAddress.country} />
+              <AddressPart label="Województwo" text={dataAddress.province} />
+              <AddressPart label="Miasto" text={dataAddress.city} />
+              <AddressPart label="Kod pocztowy" text={dataAddress.postalCode} />
             </div>
           </div>
         )}
@@ -89,25 +89,25 @@ export default function AddressSection({ onAddressChange, onMakeMainChange }: Ad
           <div className="flex flex-col gap-y-8">
             <div className="grid grid-cols-2 gap-y-8 gap-x-10">
               <Dropdown
-                placeholder="Country"
+                placeholder="Kraj"
                 className="w-full"
-                options={["Poland", "USA", "Germany"]}
+                options={["Polska", "USA", "Niemcy"]}
                 onChange={setCountry}
               />
               <Dropdown
-                placeholder="Province"
+                placeholder="Województwo"
                 className="w-full"
                 options={["Mazowieckie", "Małopolskie", "Dolnośląskie"]}
                 onChange={setProvince}
               />
               <Dropdown
-                placeholder="City"
+                placeholder="Miasto"
                 className="w-full"
                 options={["Warszawa", "Kraków", "Wrocław"]}
                 onChange={setCity}
               />
               <Dropdown
-                placeholder="Postal Code"
+                placeholder="Kod pocztowy"
                 className="w-full"
                 options={["00-001", "30-001", "50-001"]}
                 onChange={setPostalCode}
@@ -117,11 +117,11 @@ export default function AddressSection({ onAddressChange, onMakeMainChange }: Ad
               type="text"
               readOnly
               value={[country, province, city, postalCode].filter(Boolean).join(", ")}
-              placeholder="Complete Address"
+              placeholder="Pełny adres"
               className="px-3.5 py-2.5 w-full bg-[var(--color-tile)] border border-[var(--color-border-secondary)] rounded-md mb-2"
             />
             <Checkbox
-              text="Make it the main address"
+              text="Ustaw jako główny adres"
               checked={makeMain}
               onChange={() => setMakeMain((prev) => !prev)}
             />

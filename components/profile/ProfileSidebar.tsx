@@ -22,7 +22,7 @@ export default function ProfileSidebar({ firstName, email }: ProfileSidebarProps
       </div>
       <hr className="text-[var(--color-border-secondary)]" />
       <Button onClick={() => signOut({ callbackUrl: "/" })} buttonStyle="text">
-        Logout
+        Wyloguj
       </Button>
     </div>
   );

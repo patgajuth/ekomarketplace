@@ -27,7 +27,7 @@ export default function ProductInfo({
         <span className="heading5 font-medium">{name}</span>
         <Badge className="w-max" text={category} />
       </div>
-      <span className="heading4 font-medium">${price}</span>
+      <span className="heading4 font-medium">{price.toFixed(2)} zł</span>
       <div className="flex flex-col gap-y-1 textM text-[var(--textColor-secondary)]">
         <div>{description}</div>
         <div className={clsx(viewMore ? "" : "hidden")}>{exploreInfo}</div>
@@ -35,17 +35,17 @@ export default function ProductInfo({
           onClick={() => setViewMore((v) => !v)}
           className="text-[var(--color-primary)] cursor-pointer text-start w-max"
         >
-          {viewMore ? "View Less" : "View More"}
+          {viewMore ? "Pokaż mniej" : "Pokaż więcej"}
         </button>
       </div>
       <div className="flex flex-col gap-y-3.5">
-        <span className="text-[var(--textColor-tertiary)] textL">Shipping Available</span>
+        <span className="text-[var(--textColor-tertiary)] textL">Dostawa dostępna</span>
         <div className="flex gap-x-2 p-4 border rounded-md border-[var(--color-border-primary)] w-max">
           <ShieldIcon className="text-success-500 text-xl" />
           <div className="flex flex-col gap-y-1 textM">
-            <span className="font-medium">NexusHub Courier</span>
+            <span className="font-medium">Kurier EkoMarketPlace</span>
             <span className="text-[var(--textColor-tertiary)]">
-              Estimated arrival {shippingEstimate}
+              Szacowana dostawa {shippingEstimate}
             </span>
           </div>
         </div>

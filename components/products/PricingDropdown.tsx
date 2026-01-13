@@ -40,11 +40,11 @@ function PricingDropdown({ onChange }: { onChange?: (data: { minPrice: string; m
   };
 
   return (
-    <DropdownComponents withTitle title="Price" defaultOpen>
+    <DropdownComponents withTitle title="Cena" defaultOpen>
       <InputField
         variant="leftButton"
-        placeholder="$ Min Price"
-        textButton="USD"
+        placeholder="Min. cena"
+        textButton="zł"
         value={min}
         onChange={handleMinChange}
         withRightIcon
@@ -53,8 +53,8 @@ function PricingDropdown({ onChange }: { onChange?: (data: { minPrice: string; m
       />
       <InputField
         variant="leftButton"
-        placeholder="$ Max Price"
-        textButton="USD"
+        placeholder="Maks. cena"
+        textButton="zł"
         value={max}
         onChange={handleMaxChange}
         withRightIcon

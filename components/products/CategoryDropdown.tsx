@@ -14,7 +14,7 @@ type CategoryDropdownClientProps = {
 export default function CategoryDropdown({
   limit = 3,
   onChange,
-  initial = ["All"],
+  initial = ["Wszystkie"],
   options,
 }: CategoryDropdownClientProps) {
   const [selected, setSelected] = useState<string[]>(initial);
@@ -24,17 +24,17 @@ export default function CategoryDropdown({
 
   const handleToggle = (option: string) => {
     setSelected((prev) => {
-      if (option === "All") {
-        if (prev.includes("All")) {
+      if (option === "Wszystkie") {
+        if (prev.includes("Wszystkie")) {
           return [];
         }
         return [...options];
       }
 
-      const nonAll = options.filter((o) => o !== "All");
+      const nonAll = options.filter((o) => o !== "Wszystkie");
       let next: string[];
 
-      if (prev.includes("All")) {
+      if (prev.includes("Wszystkie")) {
         const specifics = [...nonAll];
         if (specifics.includes(option)) {
           next = specifics.filter((o) => o !== option);
@@ -57,7 +57,7 @@ export default function CategoryDropdown({
   };
 
   return (
-    <DropdownComponents withTitle title="Category" limit={limit} defaultOpen>
+    <DropdownComponents withTitle title="Kategorie" limit={limit} defaultOpen>
       {options.map((option) => (
         <Checkbox
           key={option}

@@ -18,11 +18,10 @@ export default function TransactionDetails({
     <div className="flex flex-col gap-y-6">
       <div className="textM font-medium text-center">{invoiceNumber}</div>
       <div className="flex flex-col gap-y-4">
-        <Detail label="Transaction Date" value={transactionDate} />
-        <Detail label="Payment Method" value={paymentMethod} />
-        <Detail label="Shipping Method" value={shippingMethod} />
+        <Detail label="Data transakcji" value={transactionDate} />
+        <Detail label="Metoda płatności" value={paymentMethod} />
+        <Detail label="Sposób dostawy" value={shippingMethod} />
       </div>
     </div>
   );
 }
-

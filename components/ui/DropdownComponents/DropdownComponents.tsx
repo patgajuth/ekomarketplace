@@ -14,7 +14,7 @@ type DropdownComponentsProps = {
 export default function DropdownComponents({
   children,
   withTitle,
-  title = "Details",
+  title = "Szczegóły",
   limit = 3,
   defaultOpen,
 }: DropdownComponentsProps) {
@@ -37,11 +37,11 @@ export default function DropdownComponents({
             <button onClick={toggleLoadMore} className="mt-4 cursor-pointer textM">
               {isLoadMore ? (
                 <span className="flex gap-x-3.5 items-center">
-                  Load Less <MinusIcon />
+                  Pokaż mniej <MinusIcon />
                 </span>
               ) : (
                 <span className="flex gap-x-3.5 items-center">
-                  Load More <CrossIcon />
+                  Pokaż więcej <CrossIcon />
                 </span>
               )}
             </button>

@@ -13,9 +13,9 @@ type UseSortedSelectParams = {
 export function useSortedSelect({
   onChange,
   sortByOptions = [
-    { value: "latest", label: "Latest" },
-    { value: "highest_price", label: "Highest price" },
-    { value: "lowest_price", label: "Lowest price" },
+    { value: "latest", label: "Najnowsze" },
+    { value: "highest_price", label: "Najwyższa cena" },
+    { value: "lowest_price", label: "Najniższa cena" },
   ],
   itemsPerPageOptions = ["9", "12", "15"],
   initialSortBy,

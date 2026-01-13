@@ -14,7 +14,7 @@ export default function ProductsSection({ loading, error, products }: Props) {
   if (loading) {
     return (
       <div className="flex flex-wrap w-full gap-x-12 gap-y-8">
-        <Loading text="Product loading..." />
+        <Loading text="Ładowanie produktów..." />
       </div>
     );
   }
@@ -22,7 +22,7 @@ export default function ProductsSection({ loading, error, products }: Props) {
   if (error) {
     return (
       <div className="flex flex-wrap w-full gap-x-12 gap-y-8">
-        <div className="w-full text-center text-danger-500">Data loading error</div>
+        <div className="w-full text-center text-danger-500">Błąd ładowania danych</div>
       </div>
     );
   }
@@ -30,7 +30,7 @@ export default function ProductsSection({ loading, error, products }: Props) {
   if (products.length === 0) {
     return (
       <div className="flex flex-wrap w-full gap-x-12 gap-y-8">
-        <div className="w-full text-center heading5">No items Found</div>
+        <div className="w-full text-center heading5">Brak produktów</div>
       </div>
     );
   }

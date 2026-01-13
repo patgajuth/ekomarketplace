@@ -36,7 +36,7 @@ export default function OrderItem({
         <>
           <hr className="text-[var(--color-border-secondary)]" />
           <div className="p-3 bg-[var(--color-tile)] border border-[var(--color-border-secondary)] rounded-md text-[var(--textColor-secondary)]">
-            <span className="font-medium">Note:</span>
+            <span className="font-medium">Notatka:</span>
             <p className="mt-1 whitespace-pre-wrap">{note}</p>
           </div>
         </>
@@ -45,11 +45,11 @@ export default function OrderItem({
       <hr className="text-[var(--color-border-secondary)]" />
       <div className="flex flex-col">
         <div className="flex justify-between items-center">
-          <Checkbox checked={protection} onChange={() => onToggleProtection(id)} text="Product Protection" />
-          <span className="font-medium pr-2">$1</span>
+          <Checkbox checked={protection} onChange={() => onToggleProtection(id)} text="Ochrona produktu" />
+          <span className="font-medium pr-2">1 zł</span>
         </div>
         <span className="textS text-[var(--textColor-tertiary)] pl-10">
-          The claim process is easy and instant, valid for 6 months
+          Prosty proces zgłoszenia szkody, ważny przez 6 miesięcy
         </span>
       </div>
     </div>

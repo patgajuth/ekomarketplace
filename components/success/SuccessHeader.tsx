@@ -6,7 +6,7 @@ type SuccessHeaderProps = {
 };
 
 export default function SuccessHeader({
-  title = "Thanks for Your Order!",
+  title = "Dziękujemy za zamówienie!",
 }: SuccessHeaderProps) {
   return (
     <div className="flex justify-center items-center flex-col gap-y-6">

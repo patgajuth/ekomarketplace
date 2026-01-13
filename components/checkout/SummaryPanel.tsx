@@ -24,20 +24,20 @@ export default function SummaryPanel({
     <div className="flex flex-col border border-[var(--color-border-secondary)] bg-[var(--color-tile)] rounded-md gap-y-6 p-6 w-[500px] h-max">
       <div className="flex flex-col textM font-semibold gap-y-4">
         <div className="flex justify-between">
-          <span>Total Product Price</span>
-          <span className="textL">${totalProductPrice.toFixed(2)}</span>
+          <span>Suma produktów</span>
+          <span className="textL">{totalProductPrice.toFixed(2)} zł</span>
         </div>
         <div className="flex justify-between">
-          <span>Total Product Protection</span>
-          <span className="textL">${totalProtection}</span>
+          <span>Suma ochrony produktów</span>
+          <span className="textL">{totalProtection} zł</span>
         </div>
         <div className="flex justify-between">
-          <span>Total Shipping Price</span>
-          <span className="textL">${shippingPrice}</span>
+          <span>Koszt dostawy</span>
+          <span className="textL">{shippingPrice} zł</span>
         </div>
         <div className="flex justify-between">
-          <span>Shipping Insurance</span>
-          <span className="textL">${insurance}</span>
+          <span>Ubezpieczenie przesyłki</span>
+          <span className="textL">{insurance} zł</span>
         </div>
       </div>
 
@@ -45,8 +45,8 @@ export default function SummaryPanel({
 
       <div className="flex flex-col textM font-semibold gap-y-4">
         <div className="flex justify-between">
-          <span>Service Fees</span>
-          <span className="textL">${serviceFee.toFixed(2)}</span>
+          <span>Opłata serwisowa</span>
+          <span className="textL">{serviceFee.toFixed(2)} zł</span>
         </div>
       </div>
 
@@ -54,11 +54,11 @@ export default function SummaryPanel({
 
       <div className="flex flex-col gap-y-8">
         <div className="flex justify-between items-center textM font-semibold">
-          <span>Grand Total</span>
-          <span className="heading5 font-medium">${grandTotal.toFixed(2)}</span>
+          <span>Razem</span>
+          <span className="heading5 font-medium">{grandTotal.toFixed(2)} zł</span>
         </div>
         <Button buttonStyle="fill" onClick={onPay}>
-          Pay Now
+          Zapłać teraz
         </Button>
       </div>
     </div>

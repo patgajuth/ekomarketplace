@@ -12,7 +12,7 @@ export default function Breadcrumb() {
     <div className="flex gap-x-2 w-full max-w-[1440px] px-10 items-center">
       {pages.length > 0 && (
         <>
-          <span className="text-[var(--textColor-tertiary)] textM font-medium capitalize">Home</span>
+          <span className="text-[var(--textColor-tertiary)] textM font-medium capitalize">Start</span>
           <DropDownIcon className="-rotate-90 text-xs text-[var(--textColor-tertiary)]" />
         </>
       )}

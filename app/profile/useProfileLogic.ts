@@ -44,7 +44,7 @@ export function useProfileLogic() {
       .then(async (res) => {
         if (!res.ok) {
           const body = await res.json();
-          throw new Error(body.message || "Fetch error");
+          throw new Error(body.message || "Błąd pobierania");
         }
         return res.json();
       })

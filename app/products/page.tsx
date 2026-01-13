@@ -8,8 +8,8 @@ export default async function Page() {
 
   return (
     <ProductsClient
-      optionsCategory={["All", ...cats.map((c) => c.name)]}
-      optionsBrand={["All", ...brands.map((b) => b.name)]}
+      optionsCategory={["Wszystkie", ...cats.map((c) => c.name)]}
+      optionsBrand={["Wszystkie", ...brands.map((b) => b.name)]}
     />
   );
 }

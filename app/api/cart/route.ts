@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
   try {
     const ids = await req.json();
     if (!Array.isArray(ids) || !ids.every((i) => typeof i === "number")) {
-      return new NextResponse("Invalid body format", { status: 400 });
+      return new NextResponse("Nieprawidłowy format danych", { status: 400 });
     }
 
     const products = await prisma.product.findMany({

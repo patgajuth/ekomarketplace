@@ -29,16 +29,23 @@ export default function ProductsClient({
     handleSortedChange,
     handlePriceChange,
   } = useProductsLogic();
+  const initialCategorySelection = initialCategories.length ? initialCategories : ["Wszystkie"];
+  const initialBrandSelection = initialBrands.length ? initialBrands : ["Wszystkie"];
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-full w-full border-t border-[var(--color-border-secondary)] mt-10">
-      <div className="flex flex-col gap-y-8 w-full lg:max-w-[360px] p-6 sm:p-8 lg:p-10">
-        <CategoryDropdown limit={5} onChange={setCategories} initial={initialCategories} options={optionsCategory} />
-        <BrandDropdown limit={5} onChange={setBrands} initial={initialBrands} options={optionsBrand} />
+    <div className="eco-surface flex flex-col lg:flex-row min-h-full w-full mt-10 rounded-3xl overflow-hidden">
+      <div className="flex flex-col gap-y-8 w-full lg:max-w-[360px] p-6 sm:p-8 lg:p-10 bg-[var(--color-surface)]">
+        <CategoryDropdown
+          limit={5}
+          onChange={setCategories}
+          initial={initialCategorySelection}
+          options={optionsCategory}
+        />
+        <BrandDropdown limit={5} onChange={setBrands} initial={initialBrandSelection} options={optionsBrand} />
         <PricingDropdown onChange={handlePriceChange} />
       </div>
 
-      <div className="flex flex-col w-full gap-y-8 p-6 sm:p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-[var(--color-border-secondary)]">
+      <div className="flex flex-col w-full gap-y-8 p-6 sm:p-8 lg:p-10 bg-[var(--color-panel)] border-t lg:border-t-0 lg:border-l border-[var(--color-border-secondary)]">
         <SortedSelect onChange={handleSortedChange} />
         <ProductsSection loading={loading} error={error} products={products} />
         {totalPages > 1 && <PaginationSection onChange={setPage} totalPages={totalPages} />}

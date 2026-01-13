@@ -43,7 +43,7 @@ export function useCheckoutLogic() {
         setLoading(true);
         const raw = localStorage.getItem("checkoutCart") || "[]";
         const localItems: LocalCheckoutItem[] = JSON.parse(raw);
-        if (!localItems.length) throw new Error("No products in the shopping cart");
+        if (!localItems.length) throw new Error("Brak produktów w koszyku");
 
         const ids = localItems.map((li) => parseInt(li.id, 10)).filter((n) => !isNaN(n));
         const urlCart = `${process.env.NEXTAUTH_URL || ""}/api/cart`;
@@ -66,7 +66,7 @@ export function useCheckoutLogic() {
         setProtections(initProt);
       } catch (err) {
         console.error("Error loading checkout items:", err);
-        setError("Cart loading error");
+        setError("Błąd ładowania koszyka");
       } finally {
         setLoading(false);
       }
@@ -118,7 +118,7 @@ export function useCheckoutLogic() {
       router.push("/checkout/success");
     } catch (err) {
       console.error("Payment error:", err);
-      setError("Payment failed");
+      setError("Płatność nie powiodła się");
     } finally {
       setLoading(false);
     }
