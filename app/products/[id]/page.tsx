@@ -3,7 +3,7 @@
 import React from "react";
 import ImageGallery from "@/components/product/ImageGallery";
 import ProductInfo from "@/components/product/ProductInfo";
-import ColorPicker from "@/components/product/ColorPicker";
+import WeightPicker from "@/components/product/WeightPicker";
 import QuantitySelector from "@/components/product/QuantitySelector";
 import AddToCartPanel from "@/components/product/AddToCartPanel";
 import { useProductLogic } from "./useProductLogic";
@@ -16,14 +16,14 @@ export default function ProductId() {
     loading,
     quantity,
     setQuantity,
-    setSelectedColor,
+    setSelectedWeight,
     handleAddToCart,
     shippingEstimate,
     images,
-    colors,
+    weightOptions,
   } = useProductLogic();
 
-  if (loading || product === null) return <Loading text="Loading Product..." />;
+  if (loading || product === null) return <Loading text="Ładowanie produktu..." />;
       const raw = localStorage.getItem("cart") || "[]";
       let current: CartItem[];
       try {
@@ -48,7 +48,7 @@ export default function ProductId() {
       </div>
 
       <div className="flex flex-col gap-y-8 w-[430px] p-6 border border-[var(--color-border-secondary)] bg-[var(--color-tile)] h-max rounded-md">
-        <ColorPicker colors={colors} onSelect={setSelectedColor} />
+        <WeightPicker options={weightOptions} onSelect={setSelectedWeight} />
         <QuantitySelector stock={product.stock - inCart} value={quantity} onChange={setQuantity} />
         <AddToCartPanel subtotal={quantity * product.price} onAdd={handleAddToCart} />
       </div>

@@ -20,7 +20,7 @@ export function useProductLogic() {
   const [error, setError] = useState<string | null>(null);
 
   const [quantity, setQuantity] = useState<number>(1);
-  const [selectedColor, setSelectedColor] = useState<string>("white");
+  const [selectedWeight, setSelectedWeight] = useState<string>("250g");
 
   useEffect(() => {
     if (!params.id) return;
@@ -62,11 +62,11 @@ export function useProductLogic() {
 
   const shippingEstimate = useMemo(() => {
     const today = new Date();
-    const start = today.toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
+    const start = today.toLocaleDateString("pl-PL", { day: "2-digit", month: "short" });
     const endDate = new Date(today);
     const randomDays = Math.floor(Math.random() * 7) + 1;
     endDate.setDate(today.getDate() + randomDays);
-    const end = endDate.toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
+    const end = endDate.toLocaleDateString("pl-PL", { day: "2-digit", month: "short" });
     return `${start} - ${end}`;
   }, []);
 
@@ -75,10 +75,11 @@ export function useProductLogic() {
     [product]
   );
 
-  const colors = useMemo(
+  const weightOptions = useMemo(
     () => [
-      { name: "white", className: "bg-white" },
-      { name: "black", className: "bg-black" },
+      { value: "250g", label: "250 g" },
+      { value: "500g", label: "500 g" },
+      { value: "1kg", label: "1 kg" },
     ],
     []
   );
@@ -89,11 +90,11 @@ export function useProductLogic() {
     error,
     quantity,
     setQuantity,
-    selectedColor,
-    setSelectedColor,
+    selectedWeight,
+    setSelectedWeight,
     handleAddToCart,
     shippingEstimate,
     images,
-    colors,
+    weightOptions,
   } as const;
 }
