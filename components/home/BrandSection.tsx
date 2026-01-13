@@ -7,15 +7,24 @@ import { getDataBrands } from "@/lib/data/getDataBrands";
 export default async function BrandSection() {
   try {
     const brands = await getDataBrands({ fields: ["id", "name", "imageUrl"] });
-    console.log("Brands:", brands);
 
     if (!brands.length) return null;
 
     return (
       <TileContainer title="Marki partnerskie">
         {brands.map((brand: Brand) => (
-          <Link key={brand.id + brand.name} href={`/products?brand=${encodeURIComponent(brand.name)}`}>
-            <Tile key={brand.id} imageURL={brand.imageUrl} title={brand.name} className="h-[46px]" />
+          <Link
+            key={brand.id + brand.name}
+            href={`/products?brand=${encodeURIComponent(brand.name)}`}
+            aria-label={`Marka ${brand.name}`}
+          >
+            <Tile
+              key={brand.id}
+              imageURL={brand.imageUrl}
+              title={brand.name}
+              className="h-[64px] w-[64px]"
+              showTitle={false}
+            />
           </Link>
         ))}
       </TileContainer>
