@@ -39,7 +39,7 @@ export default function ProductCard({
   return (
     <Link href={`/products/${id}`}>
       <div className="eco-card flex flex-col gap-y-4 items-center p-5 rounded-2xl w-[300px] cursor-pointer group">
-        <div className="flex justify-center items-center relative rounded-2xl bg-[var(--color-eco-mist)] w-full overflow-hidden border border-[var(--color-border-primary)]">
+        <div className="flex justify-center items-center relative rounded-2xl bg-[var(--color-panel)] w-full overflow-hidden border border-[var(--color-panel-border)]">
           <img
             src={imageURL}
             alt={itemName}

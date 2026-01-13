@@ -21,7 +21,9 @@ const manrope = Manrope({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
-      <body className={`${manrope.variable} ${fraunces.variable} flex flex-col min-h-screen items-center antialiased`}>
+      <body
+        className={`${manrope.variable} ${fraunces.variable} flex flex-col min-h-screen items-center antialiased scrollbar-thin scrollbar-thumb-primary-400 scrollbar-track-transparent`}
+      >
         <Providers>
           <Header />
           <main className="flex flex-grow justify-center w-full max-w-[1440px] px-4 sm:px-6 lg:px-10 pb-20">

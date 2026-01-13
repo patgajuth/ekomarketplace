@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "tailwind-scrollbar";
 
 @theme inline {
   --color-background: var(--background);
@@ -117,7 +118,7 @@
 :root {
   --background: #f6fbf4;
   --foreground: #0f2a1d;
-  --color-tile: #fbfdfb;
+  --color-tile: #ffffff;
   --color-footer: #e7f4ea;
   --color-border-primary: #cfe2d3;
   --color-border-secondary: #bdd6c4;
@@ -128,6 +129,15 @@
   --textColor-tertiary: #6a8072;
   --color-eco-sand: #f3efe5;
   --color-eco-mist: #f7fbf4;
+  --color-surface: #f0f6ef;
+  --color-surface-alt: #e7f1e6;
+  --color-card: #ffffff;
+  --color-card-alt: #eef7ee;
+  --color-card-border: #b8d3c0;
+  --color-panel: #edf5ee;
+  --color-panel-border: #cfe1d4;
+  --color-card-shadow: rgba(10, 60, 35, 0.18);
+  --color-card-shadow-strong: rgba(10, 60, 35, 0.28);
   --eco-glow: rgba(46, 167, 106, 0.18);
   --eco-warm: rgba(210, 180, 120, 0.2);
 }
@@ -136,10 +146,10 @@
   :root {
     --background: #0c1b14;
     --foreground: #e7f1ea;
-    --color-tile: #0f2319;
+    --color-tile: #13281d;
     --color-footer: #0b1912;
-    --color-border-primary: #1f3b2d;
-    --color-border-secondary: #183226;
+    --color-border-primary: #244836;
+    --color-border-secondary: #1b3628;
     --color-primary: var(--color-primary-400);
     --color-secondary: var(--color-primary-500);
     --textColor-primary: #e9f5ee;
@@ -147,6 +157,15 @@
     --textColor-tertiary: #93a89c;
     --color-eco-sand: #2a2b1f;
     --color-eco-mist: #102116;
+    --color-surface: #0f2419;
+    --color-surface-alt: #132b1f;
+    --color-card: #163324;
+    --color-card-alt: #193a29;
+    --color-card-border: #2f5b45;
+    --color-panel: #112a1e;
+    --color-panel-border: #214333;
+    --color-card-shadow: rgba(0, 0, 0, 0.45);
+    --color-card-shadow-strong: rgba(0, 0, 0, 0.6);
     --eco-glow: rgba(46, 167, 106, 0.22);
     --eco-warm: rgba(120, 100, 60, 0.18);
   }
@@ -266,22 +285,22 @@ input[type="number"] {
 }
 
 .eco-surface {
-  background: linear-gradient(180deg, var(--color-tile) 0%, var(--color-eco-mist) 100%);
-  border: 1px solid var(--color-border-primary);
-  box-shadow: 0 18px 40px rgba(15, 74, 38, 0.12);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 18px 40px var(--color-card-shadow);
 }
 
 .eco-card {
-  background: linear-gradient(180deg, var(--color-tile) 0%, var(--color-eco-mist) 100%);
-  border: 1px solid var(--color-border-primary);
-  box-shadow: 0 14px 32px rgba(15, 74, 38, 0.12);
+  background: linear-gradient(165deg, var(--color-card) 0%, var(--color-card-alt) 100%);
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 14px 32px var(--color-card-shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .eco-card:hover {
   transform: translateY(-3px);
   border-color: var(--color-primary-200);
-  box-shadow: 0 20px 46px rgba(15, 74, 38, 0.18);
+  box-shadow: 0 24px 50px var(--color-card-shadow-strong);
 }
 
 .eco-hero {
@@ -289,7 +308,7 @@ input[type="number"] {
     radial-gradient(720px 360px at 5% 95%, var(--eco-glow), transparent 65%),
     radial-gradient(560px 300px at 95% 5%, var(--eco-warm), transparent 65%),
     linear-gradient(135deg, var(--color-eco-mist) 0%, var(--color-tile) 60%);
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid var(--color-card-border);
   box-shadow: 0 30px 70px rgba(15, 74, 38, 0.18);
 }
 
