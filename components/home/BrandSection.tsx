@@ -22,7 +22,8 @@ export default async function BrandSection() {
               key={brand.id}
               imageURL={brand.imageUrl}
               title={brand.name}
-              className="h-[64px] w-[64px]"
+              className="h-[72px] w-[72px]"
+              containerClassName="h-[120px] w-[140px] gap-y-4"
               showTitle={false}
             />
           </Link>
