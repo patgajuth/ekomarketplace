@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  firstName  String
+  password   String
+  phone      String   @unique
+  country    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  orders     Order[]
+  addresses  Adress[]
+}
+
+model Adress {
+  id         Int     @id @default(autoincrement())
+  userId     Int
+  country    String
+  province   String
+  city       String
+  postalCode String
+
+  user       User    @relation(fields: [userId], references: [id])
+}
+
+model Order {
+  id           Int        @id @default(autoincrement())
+  userId       Int
+  status       String
+  address      String
+  totalAmount  Float
+  createdAt    DateTime    @default(now())
+
+  user        User        @relation(fields: [userId], references: [id])
+  items       OrderItem[]
+}
+
+model OrderItem {
+  id         Int     @id @default(autoincrement())
+  orderId    Int
+  productId  Int
+  note       String?
+  quantity   Int
+  protection Boolean
+
+  order      Order   @relation(fields: [orderId], references: [id])
+  product    Product @relation(fields: [productId], references: [id])
+}
+
+model Brand {
+  id        Int     @id @default(autoincrement())
+  name      String
+  imageUrl  String
+
+  products  Product[]
+}
+
+model Category {
+  id         Int     @id @default(autoincrement())
+  name       String
+  imageUrl   String
+  iconUrl    String
+  description String
+  exploreInfo String
+
+  products   Product[]
+}
+
+model Product {
+  id          Int           @id @default(autoincrement())
+  brandId     Int
+  categoryId  Int
+  name        String
+  description String
+  exploreInfo String
+  price       Float
+  discount    Float
+  stock       Int
+  imageUrl  String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  brand       Brand         @relation(fields: [brandId], references: [id])
+  category    Category      @relation(fields: [categoryId], references: [id])
+  orderItems  OrderItem[]
+}
