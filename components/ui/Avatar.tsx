@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ProfilIcon } from "../icons";
 
 type AvatarProps = {
@@ -8,7 +9,7 @@ function Avatar({ src }: AvatarProps) {
   return (
     <div className="flex w-10 h-10 rounded-full justify-center items-center border-2 border-[var(--textColor-tertiary)] bg-[var(--color-primary)] overflow-hidden">
       {src ? (
-        <img src={src} alt="Awatar" className="w-full h-full object-cover" />
+        <Image src={src} alt="Awatar" width={40} height={40} className="w-full h-full object-cover" />
       ) : (
         <ProfilIcon className="text-[var(--color-tile)] text-xl" />
       )}
