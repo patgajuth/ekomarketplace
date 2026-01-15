@@ -43,7 +43,7 @@ export function useSignInLogic(): UseSignInLogicReturn {
     }
     setError(null);
     setStep("password");
-  }, [identifier, isValidIdentifier]);
+  }, [isValidIdentifier]);
 
   const handleBackToIdentifier = useCallback(() => {
     setStep("identifier");

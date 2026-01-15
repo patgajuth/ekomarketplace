@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { CartIcon } from "../icons";
 import Badge from "../ui/Badge";
@@ -39,11 +40,13 @@ export default function ProductCard({
   return (
     <Link href={`/products/${id}`}>
       <div className="eco-card flex flex-col gap-y-4 items-center p-5 rounded-2xl w-[300px] cursor-pointer group">
-        <div className="flex justify-center items-center relative rounded-2xl bg-[var(--color-panel)] w-full overflow-hidden border border-[var(--color-panel-border)]">
-          <img
+        <div className="flex justify-center items-center relative rounded-2xl bg-[var(--color-panel)] w-full h-[200px] overflow-hidden border border-[var(--color-panel-border)]">
+          <Image
             src={imageURL}
             alt={itemName}
-            className="h-[200px] object-contain rounded-2xl transition-transform duration-300 group-hover:scale-[1.04]"
+            fill
+            sizes="(max-width: 768px) 100vw, 300px"
+            className="object-contain rounded-2xl transition-transform duration-300 group-hover:scale-[1.04]"
           />
           <button
             onClick={handleAddToCart}

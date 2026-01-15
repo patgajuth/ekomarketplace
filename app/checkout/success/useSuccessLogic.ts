@@ -151,7 +151,7 @@ export function useSuccessLogic() {
       }
     }
     finalize();
-  }, [router, userId, alert]);
+  }, [fetchWithRetry, userId]);
 
   return {
     status,

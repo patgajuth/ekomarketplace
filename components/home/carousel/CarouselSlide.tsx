@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SvgRightArrow from "@/components/icons/RightArrow";
 import Button from "../../ui/Button";
 import { Category } from "@prisma/client";
@@ -28,11 +29,13 @@ export default function CarouselSlide({ category, onButtonClick }: CarouselSlide
           Zobacz kategorię
         </Button>
       </div>
-      <div className="absolute flex justify-center w-1/2 h-full right-0">
-        <img
-          className="h-full object-contain drop-shadow-[0_30px_50px_rgba(16,86,48,0.2)]"
+      <div className="absolute flex justify-center w-1/2 h-full right-0 relative">
+        <Image
+          className="object-contain drop-shadow-[0_30px_50px_rgba(16,86,48,0.2)]"
           src={category.imageUrl}
           alt={category.name}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
     </section>

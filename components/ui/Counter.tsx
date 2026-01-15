@@ -16,7 +16,7 @@ export default function Counter({ max, onChange, value = 1 }: CounterProps) {
 
   useEffect(() => {
     onChange?.(quantity);
-  }, [quantity]);
+  }, [quantity, onChange]);
 
   const increment = useCallback(() => {
     setQuantity((prev) => (prev < max ? prev + 1 : prev));

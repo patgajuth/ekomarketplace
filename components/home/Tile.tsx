@@ -1,3 +1,4 @@
+import Image from "next/image";
 import clsx from "clsx";
 
 type Tile = {
@@ -16,7 +17,15 @@ function Tile({ imageURL, title, className, showTitle = true, containerClassName
         containerClassName
       )}
     >
-      <img src={imageURL} alt={`Zdjęcie ${title}`} className={clsx("rounded-lg object-contain", className)} />
+      <div className={clsx("relative h-[80px] w-[80px]", className)}>
+        <Image
+          src={imageURL}
+          alt={`Zdjęcie ${title}`}
+          fill
+          sizes="80px"
+          className="rounded-lg object-contain"
+        />
+      </div>
       {showTitle ? (
         <span className="textS font-medium text-[var(--textColor-primary)]">{title}</span>
       ) : (
