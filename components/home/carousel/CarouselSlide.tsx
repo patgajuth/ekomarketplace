@@ -29,7 +29,7 @@ export default function CarouselSlide({ category, onButtonClick }: CarouselSlide
           Zobacz kategorię
         </Button>
       </div>
-      <div className="absolute flex justify-center w-1/2 h-full right-0 relative">
+      <div className="absolute flex justify-center w-1/2 h-full right-0">
         <Image
           className="object-contain drop-shadow-[0_30px_50px_rgba(16,86,48,0.2)]"
           src={category.imageUrl}
